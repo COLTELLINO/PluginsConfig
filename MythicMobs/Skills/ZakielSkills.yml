@@ -1,0 +1,60 @@
+ZakielFireball:
+  Skills:
+    - sendtitle{title="§cSchiva questo!";d=20} @PlayersInRadius{r=100}
+    - sound{s=note.pling;v=1;p=2; repeat=3;repeatInterval=5} @Self
+    - potion{type=SLOW;lvl=10;duration=140} @Self
+    - delay 30
+    - skill{s=ZakielFireballShoot}
+    - projectile{onTick=ZakielFireballTrail;onHit=ZakielFireballHit;v=15;i=1;hR=1;vR=1;t=60;repeat=5;repeatInterval=15} @PIR{r=100}
+
+ZakielFireballShoot:
+  Skills:
+    - sound {s=mob.ghast.fireball;v=1;p=2; repeat=5;repeatInterval=15} @Self
+
+ZakielFireballTrail:
+  Skills:
+    - effect:particles{p=flame;amount=20;hSpread=0.1;ySpread=0.1;speed=0.1} @Origin
+
+ZakielFireballHit:
+  Skills:
+    - damage{amount=15} @Target
+    - effect:particles{p=lava;amount=20;hSpread=0.2;ySpread=0.1;speed=0.1} @Target
+
+ZakielBerserk:
+  Skills:
+    - sendtitle{title="§cSei mio!";d=20} @PlayersInRadius{r=100}
+    - sound{s=mob.enderdragon.growl;v=2;p=1} @PIR{r=100}
+    - potion{type=speed;lvl=2;duration=100} @Self
+    - effect:particles{p=angryVillager;amount=20;hSpread=1;ySpread=1;speed=0.2;repeat=5;repeatInterval=20} @Self
+
+ZakielMeteor:
+  Skills:
+    - sendtitle{title="§cPioggia esplosiva!";d=20} @PlayersInRadius{r=100}
+    - sound{s=mob.blaze.hit;v=1;p=2;repeat=3;repeatInterval=5} @Self
+    - teleportto{location=0,116.5,0;world=boss} @Self
+    - potion{type=SLOW;lvl=10;duration=250} @Self
+    - skill{s=ZakielMeteorEffect}
+    - summon{type=ZakielTNT;repeat=10;repeatInterval=10} @PIR{r=100}
+    - delay 250
+    - teleportto{location=0,65.5,0;world=boss} @Self
+
+ZakielMeteorEffect:
+  Skills:
+    - effect:particles{p=lava;amount=50;hSpread=2;ySpread=0.1;speed=0.1;repeat=10;repeatInterval=10} @PIR{r=100}
+
+ZakielFire:
+  Skills:
+    - potion{type=SLOW;lvl=10;duration=120} @Self
+    - effect:particles{p=lava;amount=50;hSpread=2;ySpread=0.1;speed=0.1;repeat=10;repeatInterval=10} @Self
+    - effect:particles{p=lava;amount=50;hSpread=2;ySpread=0.1;speed=0.1;repeat=10;repeatInterval=10} @PIR{r=100}
+    - sendtitle{title="§cBrucia!!!";d=100} @PlayersInRadius{r=100}
+    - sound{s=mob.blaze.fire;v=1;p=2} @PIR{r=100}
+    - ignite{ticks=120} @PIR{r=100}
+    - damage{amount=3;repeat=10; repeatInterval=10} @PIR{r=100}
+
+
+ZakielDespawnCheck:
+  Conditions:
+    - playernotwithin{d=100}
+  Skills:
+    - remove @Self

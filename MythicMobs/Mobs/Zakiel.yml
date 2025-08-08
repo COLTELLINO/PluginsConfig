@@ -1,0 +1,31 @@
+Zakiel:
+  Type: ZOMBIE
+  Display: '§cZakiel'
+  Health: 500
+  Damage: 80
+  Armor: 20
+  Equipment:
+    - GOLD_AXE HAND
+    - ZakielHead HEAD
+    - ZakielChest CHEST
+    - ZakielLegs LEGS
+    - ZakielBoots FEET
+  Options:
+    PreventOtherDrops: true
+    Silent: true
+    NoAI: false
+    Despawn: false
+    AlwaysShowName: true
+    FollowRange: 100
+    MovementSpeed: 0.33
+    PreventSunburn: true
+    KnockbackResistance: 1
+  Skills:
+    - potion{type=FIRE_RESISTANCE;lvl=1;duration=1000000} @Self ~onSpawn
+    - randomSkill{s=ZakielBerserk,ZakielFireball,ZakielMeteor,ZakielFire} @target ~onTimer:500
+    - actionmessage{m="&l&c<mob.hp>/<mob.mhp>❤";delay=20} @PlayersInRadius{r=100} ~onDamage
+    - skill{s=ZakielDespawnCheck} @Self ~onTimer:20
+    - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+    - sound{s=mob.enderdragon.end;v=1;p=2} @Self ~onDeath
+    - sendtitle{title="§cZakiel è stato sconfitto!";d=100;fo=60} @PlayersInRadius{r=100} ~onDeath
+    - command{c="cc give Virtual Zakiel 1 <target.name>";console=true} @RandomPlayersInRadius{r=100} ~onDeath

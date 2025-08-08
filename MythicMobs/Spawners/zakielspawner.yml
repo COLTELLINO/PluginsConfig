@@ -1,0 +1,24 @@
+zakielspawner:
+  MobName: Zakiel
+  World: boss
+  X: 1
+  Y: 64
+  Z: 2
+  Radius: 0
+  UseTimer: true
+  MaxMobs: 1
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 30
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 100
+  LeashRange: 100
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

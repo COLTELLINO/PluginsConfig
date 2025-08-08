@@ -1,0 +1,28 @@
+ZakielHead:
+  Id: SKULL_ITEM
+  Data: 3
+  Options:
+    SkinTexture: e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE3ODg1MzRhNjg3Y2ViNDdlOGZhZTdhMjE0NWM5ZThmMzQzOTFjNGE5NzdhOWNiNDk5ZjQxNDdkNDI0N2VjOSJ9fX0=
+    Display: '§cTesta di Zakiel'
+    HideFlags: 63
+
+ZakielChest:
+  Id: LEATHER_CHESTPLATE
+  Options:
+    Color: 255,140,0
+    Display: '§cCorazza di Zakiel'
+    HideFlags: 63
+
+ZakielLegs:
+  Id: LEATHER_LEGGINGS
+  Options:
+    Color: 255,140,0
+    Display: '§cGambali di Zakiel'
+    HideFlags: 63
+
+ZakielBoots:
+  Id: LEATHER_BOOTS
+  Options:
+    Color: 255,140,0
+    Display: '§cStivali di Zakiel'
+    HideFlags: 63

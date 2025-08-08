@@ -1,0 +1,7 @@
+ZakielTNT:
+  Type: TNT
+  Display: 'Zakiel TNT'
+  Options:
+    BreakBlocks: false
+    FuseTicks: 80
+    ExplosionYield: 15
